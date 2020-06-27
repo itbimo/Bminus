@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Song>
+
+@{
+    Genre? genre = null;
+    string text = null;
+}
+
+
+<div class="space">
+    <div class="card border-dark mb-3">
+        <div class="card-header">
+            <form method="post">
+                <div class="row">
+                    <div class="col">
+                        <select class="form-control selectpicker" asp-for="@genre" title="Выберите жанр" multiple data-max-options="1">
+                            <option value="@Genre.Country">Country</option>
+                            <option value="@Genre.Dubstep">Dubstep</option>
+                            <option value="@Genre.Electro">Electro</option>
+                            <option value="@Genre.ElectronicDanceMusic">Electronic Dance Music</option>
+                            <option value="@Genre.IndieRock">Indie Rock</option>
+                            <option value="@Genre.Jazz">Jazz</option>
+                            <option value="@Genre.Pop">Pop</option>
+                            <option value="@Genre.RhythmAndBlues">Rhythm and Blues</option>
+                            <option value="@Genre.Rock">Rock</option>
+                            <option value="@Genre.Techno">Techno</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <input class="form-control mr-sm-2" type="search" asp-for="@text" placeholder="Ещё-что-нибудь">
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" asp-controller="Music" asp-action="Index" asp-route-genre="@genre" asp-route-text="@text">Поиск</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @foreach (var song in Model)
+    {
+        <div class="card border-dark mb-3">
+            <div class="card-header">Жанр - @song.Genre</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <p class="card-text">Название: @song.Title | Группа: @song.Artist.Title<br />Длина: @song.Length | Дата создания: @song.Artist.CreationDate.Year</p>
+                    </div>
+                    <div class="col">
+                        <audio controls>
+                            <source src="~/audio/main.mp3" type="audio/mpeg">
+                            Тег audio не поддерживается вашим браузером.
+                            <a href="~/audio/main.mp3">Скачайте музыку</a>.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "WIXa0yAyh8eb46m5G4mfQW9CAz1W+iJdxQDndDp9Y8MsaON4JGxOPQRxfP/ZG9LYg5kqVcjyXivUKQOEAfvrvA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\raven\\Desktop\\Bminus\\Bminus\\Bminus.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\raven\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\raven\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

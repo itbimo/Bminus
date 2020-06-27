@@ -1,0 +1,56 @@
+[
+  {
+    "Title": "Faint",
+    "Genre": 1,
+    "Length": "2:48",
+    "Artist": {
+      "Title": "Linkin Park",
+      "CreationDate": "2007-06-12T00:00:00"
+    }
+  },
+  {
+    "Title": "I Can't Drive 55",
+    "Genre": 1,
+    "Length": "4:41",
+    "Artist": {
+      "Title": "Sammy Hagar",
+      "CreationDate": "2007-06-12T00:00:00"
+    }
+  },
+  {
+    "Title": "Carry On Wayward Son",
+    "Genre": 1,
+    "Length": "5:24",
+    "Artist": {
+      "Title": "Kansas",
+      "CreationDate": "2007-06-12T00:00:00"
+    }
+  },
+  {
+    "Title": "Rock You Like a Hurricane",
+    "Genre": 1,
+    "Length": "4:17",
+    "Artist": {
+      "Title": "Scorpions",
+      "CreationDate": "2007-06-12T00:00:00"
+    }
+  },
+  {
+    "Title": "Take on Me",
+    "Genre": 9,
+    "Length": "4:04",
+    "Artist": {
+      "Title": "A-Ha",
+      "CreationDate": "1984-01-10T00:00:00"
+    }
+  },
+  {
+    "Title": "Bohemian Rhapsody",
+    "Genre": 9,
+    "Length": "4:04",
+    "Artist": {
+      "Title": "Queen",
+      "CreationDate": "1975-01-10T00:00:00"
+    }
+  }
+]

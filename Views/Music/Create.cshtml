@@ -1,0 +1,67 @@
+﻿@model Song
+
+<div class="space">
+    <div class="text-center">
+        <h1>Добавьте новый минус на B-minus!</h1>
+        <hr class="redline" />
+        <p>
+            Заполните форму ниже.
+        </p>
+    </div>
+
+    <form method="post" class="container needs-validation" novalidate>
+        <div class="row">
+            <div class="col input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Название</span>
+                </div>
+                <input class="form-control" asp-for="Title" placeholder="Название минуса" maxlength="30" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Жанр</span>
+                </div>
+                <select class="form-control selectpicker" asp-for="Genre" title="Выберите жанр" required multiple data-max-options="1">
+                    <option value="@Genre.Country">Country</option>
+                    <option value="@Genre.Dubstep">Dubstep</option>
+                    <option value="@Genre.Electro">Electro</option>
+                    <option value="@Genre.ElectronicDanceMusic">Electronic Dance Music</option>
+                    <option value="@Genre.IndieRock">Indie Rock</option>
+                    <option value="@Genre.Jazz">Jazz</option>
+                    <option value="@Genre.Pop">Pop</option>
+                    <option value="@Genre.RhythmAndBlues">Rhythm and Blues</option>
+                    <option value="@Genre.Rock">Rock</option>
+                    <option value="@Genre.Techno">Techno</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Группа</span>
+                </div>
+                <input class="form-control" asp-for="Artist.Title" placeholder="Название" maxlength="30" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Группа</span>
+                </div>
+                <input class="form-control" type="date" asp-for="Artist.CreationDate" placeholder="Дата создания" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col text-center mb-3">
+                <input class="btn btn-outline-success" type="submit" value="Добавить" />
+            </div>
+        </div>
+    </form>
+
+</div>

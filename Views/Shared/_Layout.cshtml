@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Bminus</title>
+    <link rel="stylesheet" href="~/lib/twitter-bootstrap/css/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap-select/css/bootstrap-select.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+@{
+    var controllerName = ViewContext.RouteData.Values["controller"].ToString();
+    var actionName = ViewContext.RouteData.Values["action"].ToString();
+    var currentUser = ViewData["user"];
+    var premium = ViewData["premium"];
+}
+<body>
+    <header>
+
+            <nav class="navbar fixed-top navbar-light navbar-border">
+                @if (currentUser != null)
+                {
+                    <a class="navbar-brand" asp-controller="Music" asp-action="Create"><i class="far fa-plus-square"></i></a>
+                }
+                <a class="navbar-brand mb-0 h1" asp-controller="Music" asp-action="Index">B-minus</a>
+
+                <form class="form-inline">
+                    @if (currentUser != null)
+                    {
+                        <span class="navbar-brand">@currentUser</span>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" asp-controller="Authorization" asp-action="Logout">Выход</button>
+                        @if (premium == null)
+                        {
+                            <button class="btn btn-outline-info" type="submit" style="margin-left: 5px" asp-controller="Authorization" asp-action="GetPremium">Оформить подписку: 5$</button>
+                        }
+                        else
+                        {
+                            <span class="navbar-brand" style="margin-left: 5px">Подписка оформлена!</span>
+                        }
+                    }
+                    else
+                    {
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" asp-controller="Authorization" style="margin-right: 5px" asp-action="Registration">Регистрация</button>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" asp-controller="Authorization" asp-action="Login">Вход</button>
+                    }
+
+                </form>
+            </nav>
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - Bminus
+        </div>
+    </footer>
+    <script src="~/lib/jquery/jquery.slim.min.js" asp-append-version="true"></script>
+    <script src="~/lib/popper.js/umd/popper.min.js" asp-append-version="true"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.min.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap-select/js/bootstrap-select.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery.mask/jquery.mask.min.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
